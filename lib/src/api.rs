@@ -57,17 +57,17 @@ impl Api {
     /// # Examples
     ///
     /// ```rust
-    /// # use telegram_bot::Api;
+    /// use telegram_bot::Api;
     /// use futures::StreamExt;
     ///
-    /// # #[tokio::main]
-    /// # async fn main() {
-    /// # let api: Api = Api::new("token");
+    /// #[tokio::main]
+    /// async fn main() {
+    ///     let api: Api = Api::new("token");
     ///
-    /// let mut stream = api.stream();
-    /// let update = stream.next().await;
+    ///     let mut stream = api.stream();
+    ///     let update = stream.next().await;
     ///     println!("{:?}", update);
-    /// # }
+    /// }
     /// ```
     pub fn stream(&self) -> UpdatesStream {
         UpdatesStream::new(&self)
